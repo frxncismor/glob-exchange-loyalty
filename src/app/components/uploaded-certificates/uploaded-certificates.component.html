@@ -1,0 +1,15 @@
+<h1>📚 Certificados subidos</h1>
+<mat-card>
+  <mat-card-content>
+      <div class="certificate" *ngFor="let certificate  of certificates">
+          <figure class="certificate__figure">
+              <img [src]="certificate.image" alt="certificate image">
+          </figure>
+          <div class="certificate__info">
+              <p class="certificate__info--title">{{certificate.title}}</p>
+              <p class="certificate__info--date">{{certificate.date}}</p>
+              <a [href]="certificate.url" target="_blank">Link</a>
+          </div>
+      </div>
+  </mat-card-content>
+</mat-card>

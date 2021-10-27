@@ -1,0 +1,12 @@
+  <h1>🔝 Subir certificado</h1>
+  <mat-card>
+    <mat-card-content>
+        <mat-form-field>
+          <input class="title-field" type="text" matInput id="title" placeholder="Title" [(ngModel)]="model.title" name="title">
+        </mat-form-field>
+        <mat-form-field class="title-field">
+          <input type="text" matInput id="url" placeholder="URL" [(ngModel)]="model.url" name="url">
+        </mat-form-field>
+      <button id="send" (click)="send()">Subir</button>
+    </mat-card-content>
+  </mat-card>

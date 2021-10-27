@@ -1,0 +1,12 @@
+
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field>
+        <input class="amount-field" type="text" matInput id="amount" placeholder="Amount" [(ngModel)]="model.amount" name="amount">
+      </mat-form-field>
+      <mat-form-field class="address-field">
+        <input type="text" matInput id="receiver" placeholder="Receiver Address" [(ngModel)]="model.receiver" name="receiver">
+      </mat-form-field>
+      <button mat-button id="send" (click)="sendCoin()">Send MetaCoin</button>
+    </mat-card-content>
+  </mat-card>
