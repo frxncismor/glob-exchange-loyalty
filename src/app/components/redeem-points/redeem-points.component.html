@@ -1,1 +1,7 @@
-<p>redeem-points works!</p>
+<h1>🤑 Canje de puntos</h1>
+<mat-card>
+  <mat-card-content>
+      <h3>Tienes {{model.tokenPoints | number }} puntos, lo cual equivale a {{model.ethRewards | number}} ETH</h3>
+    <button id="send" (click)="claim()">Reclamar</button>
+  </mat-card-content>
+</mat-card>

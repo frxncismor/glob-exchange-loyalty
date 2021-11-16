@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { TokenService } from './../../util/token.service';
 import { Web3Service } from './../../util/web3.service';
-
-declare let require: any;
-const metacoin_artifacts = require('../../../../build/contracts/MetaCoin.json');
 
 @Component({
   selector: 'app-header',
@@ -14,60 +12,33 @@ export class HeaderComponent implements OnInit {
   MetaCoin: any;
 
   model = {
-    amount: 5,
-    receiver: '',
     balance: 0,
     account: '',
     eth: 0
   };
 
-  constructor(private web3Service: Web3Service) {}
+  constructor(private web3Service: Web3Service, private tokenService: TokenService) {}
 
   ngOnInit() {
-    console.log('OnInit: ' + this.web3Service);
-    console.log(this);
-    this.watchAccount();
-    this.web3Service.artifactsToContract(metacoin_artifacts)
-      .then((MetaCoinAbstraction) => {
-        this.MetaCoin = MetaCoinAbstraction;
-        this.MetaCoin.deployed().then(deployed => {
-          console.log('deployed',deployed);
-          deployed.Transfer({}, (err, ev) => {
-            console.log('Transfer event came in, refreshing balance');
-            this.refreshBalance();
-          });
-        });
 
-      });
+    this.watchAccount();
   }
 
   watchAccount() {
-    this.web3Service.accountsObservable.subscribe((accounts) => {
-      this.accounts = accounts;
-      this.model.account = accounts[0];
-      console.log(this.model.account)
-      this.refreshBalance();
+    this.tokenService.tokensBalance$.subscribe((tokenBalance: any) => {
+      this.model.balance = parseInt(tokenBalance.words);
+    });
+    this.tokenService.ethBalance$.subscribe((ethBalance: any) => {
+      console.log('ethBalance ',ethBalance)
+      this.model.eth = ethBalance;
+    });
+    this.tokenService.account$.subscribe((account: any) => {
+      console.log('account ',account)
+      this.model.account = account;
     });
   }
 
-  async refreshBalance() {
-    console.log('Refreshing balance');
 
-    try {
-      const deployedMetaCoin = await this.MetaCoin.deployed();
-      console.log(deployedMetaCoin);
-      console.log('Account', this.model.account);
-      const metaCoinBalance = await deployedMetaCoin.getBalance.call(this.model.account);
-      const ethBalanceInWei = await this.web3Service.web3.eth.getBalance(this.model.account);
-      const ethBalance = await this.web3Service.web3.utils.fromWei(ethBalanceInWei);
-      console.log('Found balance: ' + metaCoinBalance);
-      console.log('Eth balance: ' + ethBalance);
-      this.model.balance = metaCoinBalance;
-      this.model.eth = ethBalance;
-    } catch (e) {
-      console.error(e);
-    }
-  }
 
  
 

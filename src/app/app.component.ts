@@ -7,5 +7,5 @@ import { Web3Service } from './util/web3.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
 }

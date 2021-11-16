@@ -7,9 +7,25 @@
     min-width: 970px;
 }
 
-.header__title {
-    font-size: 28px;
+.header__logo {
+    display: flex;
+}
+
+.header figure {
+    max-height: 100%;
+}
+
+.header figure img {
+    max-height: 100%;
+}
+
+.header__logo--title {
+    font-size: 22px;
     margin-left: 8px;
+    justify-content: center;
+    align-items: center;
+    display: inherit;
+    margin-left: -33px;
 }
 
 .header__section {

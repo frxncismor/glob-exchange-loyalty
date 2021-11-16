@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from './../../util/token.service';
 
 @Component({
   selector: 'app-uploaded-certificates',
@@ -6,51 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./uploaded-certificates.component.css']
 })
 export class UploadedCertificatesComponent implements OnInit {
+  certificates = [];
 
-  certificates = [
-    {
-      title: 'Curso de programacion',
-      url: 'https://www.cursodeprogramacion.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-    {
-      title: 'Curso de blockchain',
-      url: 'https://www.cursodeblockchain.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-    {
-      title: 'Curso de blockchain',
-      url: 'https://www.cursodeblockchain.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-    {
-      title: 'Curso de blockchain',
-      url: 'https://www.cursodeblockchain.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-    {
-      title: 'Curso de blockchain',
-      url: 'https://www.cursodeblockchain.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-    {
-      title: 'Curso de blockchain',
-      url: 'https://www.cursodeblockchain.com',
-      date: '24/10/2021',
-      image: 'https://cdn-icons-png.flaticon.com/512/2038/2038372.png'
-    },
-  ];
-
-  constructor() { 
+  constructor(private tokenService: TokenService) { 
   
   }
 
   ngOnInit() {
+    this.tokenService.courses$.subscribe(res => {
+      this.certificates = res;
+      console.log(this.certificates)
+    });
   }
 
   send() {

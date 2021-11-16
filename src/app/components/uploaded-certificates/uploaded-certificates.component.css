@@ -10,6 +10,7 @@ h1 {
 mat-card {
     min-width: 598px;
     max-height: 89px;
+    min-height: 89px;
     overflow: auto;
     overflow-y: hidden;
 }
@@ -58,4 +59,35 @@ a {
 
 .certificate__info--date {
     font-size: 11px;
+}
+
+.certificate__wrapper--no-certs  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate__text--no-certs {
+    font-size: 18px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #EF5DA8;
 }

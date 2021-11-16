@@ -1,12 +1,14 @@
   <h1>🔝 Subir certificado</h1>
   <mat-card>
     <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="send($event)">
         <mat-form-field>
-          <input class="title-field" type="text" matInput id="title" placeholder="Title" [(ngModel)]="model.title" name="title">
+          <input class="title-field" formControlName="title" type="text" matInput id="title" placeholder="Title" [(ngModel)]="model.title" name="title">
         </mat-form-field>
         <mat-form-field class="title-field">
-          <input type="text" matInput id="url" placeholder="URL" [(ngModel)]="model.url" name="url">
+          <input type="url" matInput id="url" formControlName="url" placeholder="URL" [(ngModel)]="model.url" name="url">
         </mat-form-field>
-      <button id="send" (click)="send()">Subir</button>
+      <button [disabled]="form.invalid" id="send">Subir</button>
+      </form>
     </mat-card-content>
   </mat-card>

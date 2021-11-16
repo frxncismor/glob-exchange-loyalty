@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { UtilModule } from '../../util/util.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadCertificateComponent } from './upload-certificate.component';
 
 
@@ -22,7 +22,8 @@ import { UploadCertificateComponent } from './upload-certificate.component';
     MatSnackBarModule,
     RouterModule,
     UtilModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [UploadCertificateComponent],
   exports: [UploadCertificateComponent]

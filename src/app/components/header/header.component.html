@@ -1,17 +1,22 @@
 <div class="header">
-    <h1 class="header__title">Intercambio de puntos</h1>
+    <div class="header__logo">
+        <figure>
+            <img src="assets/logo.png" alt="Globant logo">
+        </figure>
+        <h1 class="header__logo--title">Intercambio de puntos</h1>
+    </div>
     <div class="header__section">
         <div class="header__section--balance">
             <figure class="header__figure">
                 <img src="https://img.icons8.com/emoji/48/000000/coin-emoji.png"/>
             </figure>
-            <h2 class="header__address">{{model.balance}}</h2>
+            <h2 class="header__address">{{model.balance | number}}</h2>
         </div>
         <div class="header__section--balance">
             <figure class="header__figure">
                 <img src="https://img.icons8.com/fluency/48/ffffff/ethereum.png"/>
             </figure>
-            <h2 class="header__address">{{model.eth}}</h2>
+            <h2 class="header__address">{{model.eth | number}}</h2>
         </div>
         <div class="header__section--address">
             <figure class="header__figure">

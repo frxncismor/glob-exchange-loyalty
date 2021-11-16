@@ -7,6 +7,10 @@ h1 {
     min-width: 175px;
 }
 
+h3 {
+    font-size: 36px;
+}
+
 button {
     margin-left: 45px;
     width: 157px;
@@ -14,27 +18,37 @@ button {
     border-radius: 10px;
     outline: none;
     border: none;
-    background-color: #EF5DA8;  
-    color: white;
+    background-color: white;  
+    color: #5D5FEF;
     font-weight: bold;
 }
 
 button:hover {
     box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
-    background-color: #ef5da8b0;
+    background-color: #5D5FEF;
+    color: white;
+    border: 1px solid white;
 }
 
 mat-card {
     min-width: 598px;
-    max-width: 800px;
+    max-height: 89px;
+    max-width: 100%;
     min-height: 89px;
     display: inherit;
     align-items: center;
+    background-color: #5D5FEF;
+    color: white;
 }
 
 mat-card-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 91px;
+    max-height: 100px;
+    width: 100%;
+}
+
+mat-card-content >:first-child{
+    margin-top: revert;
 }

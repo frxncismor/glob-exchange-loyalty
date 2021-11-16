@@ -18,12 +18,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { UploadCertificateModule } from './components/upload-certificate/upload-certificate.module';
 import { UploadedCertificatesModule } from './components/uploaded-certificates/uploaded-certificates.module';
 import { RedeemPointsModule } from './components/redeem-points/redeem-points.module';
+import { ContractBalanceComponent } from './components/contract-balance/contract-balance.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    ContractBalanceComponent,
   ],
   imports: [
     BrowserAnimationsModule,
