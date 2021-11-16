@@ -16,7 +16,6 @@ export class UploadedCertificatesComponent implements OnInit {
   ngOnInit() {
     this.tokenService.courses$.subscribe(res => {
       this.certificates = res;
-      console.log(this.certificates)
     });
   }
 

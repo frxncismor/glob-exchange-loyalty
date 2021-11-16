@@ -19,13 +19,15 @@ import { UploadCertificateModule } from './components/upload-certificate/upload-
 import { UploadedCertificatesModule } from './components/uploaded-certificates/uploaded-certificates.module';
 import { RedeemPointsModule } from './components/redeem-points/redeem-points.module';
 import { ContractBalanceComponent } from './components/contract-balance/contract-balance.component';
-
+import { ModalComponent } from './components/modal/modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContractBalanceComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -41,9 +43,13 @@ import { ContractBalanceComponent } from './components/contract-balance/contract
     MetaModule,
     UploadCertificateModule,
     UploadedCertificatesModule,
-    RedeemPointsModule
+    RedeemPointsModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalComponent
+  ]
 })
 export class AppModule { }

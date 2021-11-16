@@ -29,11 +29,9 @@ export class HeaderComponent implements OnInit {
       this.model.balance = parseInt(tokenBalance.words);
     });
     this.tokenService.ethBalance$.subscribe((ethBalance: any) => {
-      console.log('ethBalance ',ethBalance)
       this.model.eth = ethBalance;
     });
     this.tokenService.account$.subscribe((account: any) => {
-      console.log('account ',account)
       this.model.account = account;
     });
   }

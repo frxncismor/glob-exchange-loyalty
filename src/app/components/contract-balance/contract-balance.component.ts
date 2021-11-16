@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { ModalComponent } from '../modal/modal.component';
 import { TokenService } from './../../util/token.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { TokenService } from './../../util/token.service';
 })
 export class ContractBalanceComponent implements OnInit {
   contractBalance: any;
-  constructor(private tokenService: TokenService) { }
+  constructor(private tokenService: TokenService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.tokenService.contractBalance$.subscribe(res => {
@@ -17,7 +19,12 @@ export class ContractBalanceComponent implements OnInit {
   }
 
   fund() {
-    this.tokenService.fundContract();
+    // this.tokenService.fundContract();
+    this.openDialog();
+  }
+
+  openDialog() {
+    this.dialog.open(ModalComponent);
   }
 
 }

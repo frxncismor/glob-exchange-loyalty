@@ -35,7 +35,6 @@ export class TokenService {
     this.watchAccount();
     this.web3Service.artifactsToContract(loyalty_artifacts)
       .then((LoyaltyRewardsAbstraction) => {
-        console.log(LoyaltyRewardsAbstraction);
         this.LoyaltyRewards = LoyaltyRewardsAbstraction;
         this.LoyaltyRewards.deployed().then(deployed => {
           console.log('deployed',deployed);
@@ -55,15 +54,12 @@ export class TokenService {
   }
 
   async refreshBalance() {
-    console.log('Refreshing balance');
     try {
       const deployedLoyaltyRewards = await this.LoyaltyRewards.deployed();
       const LoyaltyRewardsBalance = await deployedLoyaltyRewards.getLoyaltyPoints.call({from: this.currentAccount});
-      console.log('getLoyaltyPoints', LoyaltyRewardsBalance.words[0]);
       const ethBalanceInWei = await this.web3Service.web3.eth.getBalance(this.currentAccount);
       const ethBalance = await this.web3Service.web3.utils.fromWei(ethBalanceInWei);
       const contractBalance = await deployedLoyaltyRewards.getBalanceInEther.call({from: this.currentAccount});
-      console.log('contractBalance', contractBalance);
       this.model.balance.next(LoyaltyRewardsBalance);
       this.model.eth.next(ethBalance);
       this.contractBalance.next(contractBalance);
@@ -76,7 +72,6 @@ export class TokenService {
 
   async uploadCourse(name, url, date) {
     const deployedLoyaltyRewards = await this.LoyaltyRewards.deployed();
-    console.log('deployedLoyaltyRewards',deployedLoyaltyRewards);
     deployedLoyaltyRewards.uploadCourse(name, url, date, {from: this.currentAccount}).then(res =>{
       this.refreshBalance()
     });

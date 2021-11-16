@@ -17,11 +17,9 @@ export class RedeemPointsComponent implements OnInit {
 
   ngOnInit() {
     this.tokenService.tokensBalance$.subscribe((tokenBalance: any) => {
-      console.log('tokenBalance', tokenBalance )
       this.model.tokenPoints = parseInt(tokenBalance);
     });
     this.tokenService.fundableEther$.subscribe(res => {
-      console.log('fundable ether', res)
       this.model.ethRewards = res;
     });
   }
