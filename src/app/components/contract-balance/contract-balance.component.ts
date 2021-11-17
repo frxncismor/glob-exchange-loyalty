@@ -19,12 +19,7 @@ export class ContractBalanceComponent implements OnInit {
   }
 
   fund() {
-    // this.tokenService.fundContract();
-    this.openDialog();
-  }
-
-  openDialog() {
-    this.dialog.open(ModalComponent);
+    this.tokenService.fundContract();
   }
 
 }

@@ -107,7 +107,7 @@ export class TokenService {
 
   async fundContract() {
     const deployedLoyaltyRewards = await this.LoyaltyRewards.deployed();
-    deployedLoyaltyRewards.addBalanceToContract({from: this.currentAccount, value: 5000000000000000000}).then(res =>{
+    deployedLoyaltyRewards.addBalanceToContract({from: this.currentAccount, value: 5000000000000000000, gas: 5000000}).then(res =>{
       this.refreshBalance()
     });
   }
