@@ -72,7 +72,7 @@ export class TokenService {
 
   async uploadCourse(name, url, date) {
     const deployedLoyaltyRewards = await this.LoyaltyRewards.deployed();
-    deployedLoyaltyRewards.uploadCourse(name, url, date, {from: this.currentAccount}).then(res =>{
+    deployedLoyaltyRewards.uploadCourse(name, url, date, {from: this.currentAccount, gas: 5000000}).then(res =>{
       this.refreshBalance()
     });
   }
