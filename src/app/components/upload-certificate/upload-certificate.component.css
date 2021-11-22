@@ -1,48 +1,87 @@
 :host {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
-    font-size: 18px;
-    min-width: 175px;
+  font-size: 18px;
+  min-width: 175px;
 }
 
 button {
-    margin-left: 45px;
-    width: 157px;
-    height: 26px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    background-color: #5D5FEF;  
-    color: white;
-    font-weight: bold;
+  margin-left: 45px;
+  width: 115px;
+  height: 26px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: #5d5fef;
+  color: white;
+  font-weight: bold;
 }
 
 button:hover {
-    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
-    background-color: #5d5fefb9;
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
+  background-color: #5d5fefb9;
 }
 
 button:disabled {
-    background-color: gray
+  background-color: gray;
 }
 
 button:disabled:hover {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 mat-card {
-    min-width: 598px;
-    max-width: 800px;
-    min-height: 89px;
-    display: inherit;
-    align-items: center;
+  min-width: 533px;
+  max-width: 533px;
+  min-height: 89px;
+  display: inherit;
+  align-items: center;
 }
 
 mat-card-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 91px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 91px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  mat-card {
+    max-width: 440px;
+    min-width: unset;
+  }
+
+  button {
+    width: 80px;
+    margin-left: unset;
+  }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  mat-card {
+    background-color: brown;
+  }
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  mat-card {
+    max-width: 385px;
+    min-width: 385px;
+  }
 }

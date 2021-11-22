@@ -8,7 +8,7 @@ h1 {
 }
 
 mat-card {
-    min-width: 598px;
+    min-width: 533px;
     max-height: 89px;
     min-height: 89px;
     overflow: auto;
@@ -91,3 +91,23 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: #EF5DA8;
 }
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    mat-card {
+        min-width: 430px;
+    }
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+  }
+
+  /* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    mat-card {
+        max-width: 385px;
+        min-width: 385px;
+    }
+  }
