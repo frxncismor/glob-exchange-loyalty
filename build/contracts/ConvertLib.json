@@ -34,7 +34,7 @@
   "sourceMap": "25:156:0:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "25:156:0:-;;;;;;;;;;;;;;;;;;;;;;;;47:132;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;47:132:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;118:20;161:14;152:6;:23;145:30;;47:132;;;;:::o",
   "source": "pragma solidity ^0.5.0;\n\nlibrary ConvertLib {\n\tfunction convert(uint amount,uint conversionRate) public pure returns (uint convertedAmount)\n\t{\n\t\treturn amount * conversionRate;\n\t}\n}\n",
-  "sourcePath": "/mnt/c/Users/PC/Documents/Codigo/UTSC/contracts/ConvertLib.sol",
+  "sourcePath": "/mnt/c/Users/paco_/Documents/solidity/glob-exchange-loyalty/contracts/ConvertLib.sol",
   "ast": {
     "absolutePath": "project:/contracts/ConvertLib.sol",
     "exportedSymbols": {
@@ -475,8 +475,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-17T00:06:48.263Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-12-01T05:22:01.052Z",
   "devdoc": {
     "methods": {}
   },

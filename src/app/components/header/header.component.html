@@ -1,28 +1,28 @@
 <div class="header">
-    <div class="header__logo">
-        <figure>
-            <img src="assets/logo.png" alt="Globant logo">
-        </figure>
-        <h1 class="header__logo--title">Intercambio de puntos</h1>
+  <div class="header__logo">
+    <h1 class="header__logo--title">G Intercambio de puntos</h1>
+  </div>
+  <div class="header__section">
+    <div class="header__section--balance">
+      <figure class="header__figure">
+        <img src="https://img.icons8.com/emoji/48/000000/coin-emoji.png" />
+      </figure>
+      <h2 class="header__address">{{ model.balance | number }}</h2>
     </div>
-    <div class="header__section">
-        <div class="header__section--balance">
-            <figure class="header__figure">
-                <img src="https://img.icons8.com/emoji/48/000000/coin-emoji.png"/>
-            </figure>
-            <h2 class="header__address">{{model.balance | number}}</h2>
-        </div>
-        <div class="header__section--balance">
-            <figure class="header__figure">
-                <img src="https://img.icons8.com/fluency/48/ffffff/ethereum.png"/>
-            </figure>
-            <h2 class="header__address">{{model.eth | number}}</h2>
-        </div>
-        <div class="header__section--address">
-            <figure class="header__figure">
-                <img  src="https://cdn.consensys.net/uploads/metamask-1.svg" alt="logo metamask">
-            </figure>
-            <h2 class="header__address">{{model.account}}</h2>
-        </div>
+    <div class="header__section--balance">
+      <figure class="header__figure">
+        <img src="https://img.icons8.com/fluency/48/ffffff/ethereum.png" />
+      </figure>
+      <h2 class="header__address">{{ model.eth | number }}</h2>
     </div>
+    <div class="header__section--address">
+      <figure class="header__figure">
+        <img
+          src="https://cdn.consensys.net/uploads/metamask-1.svg"
+          alt="logo metamask"
+        />
+      </figure>
+      <h2 class="header__address">{{ model.account }}</h2>
+    </div>
+  </div>
 </div>
